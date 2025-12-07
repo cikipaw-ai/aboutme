@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paw Portfolio Neon Futuristic</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#06060b;
+    --text:#f2f2f2;
+    --subtext:#a0a0a0;
+    --card:rgba(255,255,255,0.06);
+    --border:rgba(255,255,255,0.15);
+
+    --blue:#4e8bff;
+    --purple:#b46bff;
+    --pink:#ff49e1;
+
+    --glow-blue:0 0 20px rgba(78,139,255,0.7);
+    --glow-purple:0 0 20px rgba(180,107,255,0.7);
+    --glow-pink:0 0 20px rgba(255,73,225,0.7);
+}
+
+/* LIGHT MODE VARIABLES */
+body.light{
+    --bg:#f5f5f5;
+    --text:#1a1a1a;
+    --subtext:#555;
+    --card:rgba(0,0,0,0.06);
+    --border:rgba(0,0,0,0.15);
+
+    --blue:#4e8bff;
+    --purple:#b46bff;
+    --pink:#ff49e1;
+
+    --glow-blue:0 0 20px rgba(78,139,255,0.7);
+    --glow-purple:0 0 20px rgba(180,107,255,0.7);
+    --glow-pink:0 0 20px rgba(255,73,225,0.7);
+}
+
+body{
+    margin:0;
+    padding:0;
+    font-family:"Poppins",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+nav{
+    position:sticky;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 40px;
+    backdrop-filter:blur(12px);
+    background:rgba(0,0,0,0.5);
+    border-bottom:1px solid var(--border);
+    z-index:10;
+    border-radius:0 0 15px 15px;
+    box-shadow:0 0 20px var(--glow-blue);
+    animation:navGlow 3s ease-in-out infinite alternate;
+}
+@keyframes navGlow{
+    0%{box-shadow:0 0 15px var(--glow-blue);}
+    50%{box-shadow:0 0 20px var(--glow-purple);}
+    100%{box-shadow:0 0 15px var(--glow-pink);}
+}
+nav a{
+    margin:0 18px;
+    text-decoration:none;
+    color:var(--text);
+    font-weight:600;
+    position:relative;
+    transition:.3s;
+}
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:-4px;
+    width:0; height:2px;
+    background:var(--blue);
+    transition:.3s;
+}
+nav a:hover::after{width:100%;}
+nav a:hover{color:var(--blue);}
+
+/* TOGGLE BUTTON */
+.toggle{
+    padding:6px 15px;
+    border:1px solid var(--border);
+    background:var(--card);
+    border-radius:6px;
+    cursor:pointer;
+    color:var(--text);
+    font-weight:600;
+    transition:.3s;
+}
+.toggle:hover{box-shadow:0 0 15px var(--glow-purple);}
+
+/* HEADER */
+header{text-align:center;padding:80px 20px;}
+header h1{
+    font-size:55px;font-weight:800;
+    background:linear-gradient(90deg,var(--blue),var(--purple),var(--pink));
+    -webkit-background-clip:text;color:transparent;
+    animation:headerGlow 4s ease-in-out infinite alternate;
+}
+@keyframes headerGlow{
+    0%{text-shadow:0 0 10px var(--glow-blue);}
+    50%{text-shadow:0 0 20px var(--glow-purple);}
+    100%{text-shadow:0 0 10px var(--glow-pink);}
+}
+header p{color:var(--subtext);text-shadow:0 0 5px rgba(255,255,255,0.1);}
+
+/* PROFILE */
+.profile{
+    width:160px;height:160px;margin:30px auto;
+    border-radius:50%;
+    background:url('https://i.ibb.co/FkLdFcD2/4c73137fbd5ffcfc9ed4f610a29485a8.jpg') center/cover;
+    border:3px solid var(--border);
+    box-shadow:0 0 20px var(--glow-blue);
+}
+
+/* CONTENT */
+.container{max-width:1000px;margin:auto;padding:20px;}
+h2{
+    margin-top:60px;font-size:30px;
+    background:linear-gradient(90deg,var(--blue),var(--purple),var(--pink));
+    -webkit-background-clip:text;color:transparent;
+}
+
+/* CARD */
+.card{
+    background:var(--card);
+    padding:25px;border-radius:15px;border:1px solid var(--border);
+    margin-top:20px;
+    transition:.3s;
+    box-shadow:0 0 5px rgba(255,255,255,0.05);
+}
+.card:hover{
+    box-shadow:0 0 25px var(--glow-purple);
+    transform:scale(1.03);
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    padding:10px 18px;
+    border:1px solid var(--border);
+    background:var(--card);
+    border-radius:8px;
+    margin-top:10px;
+    text-decoration:none;
+    color:var(--text);
+    transition:.3s;
+}
+.btn:hover{box-shadow:0 0 20px var(--glow-blue);}
+
+/* CONTACT & TOOLS */
+.card p a{
+    color:var(--blue);
+    transition:.3s;
+}
+.card p a:hover{
+    text-decoration:underline;
+    text-shadow:0 0 8px var(--pink);
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div><b>Paw</b></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#tools">My Tools</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <button class="toggle" id="themeToggle" onclick="toggleTheme()">Dark</button>
+</nav>
+
+<header>
+    <div class="profile"></div>
+    <h1>Paw</h1>
+    <p>Content Creator · Software Engineer Pemula · Alight Motion Editor</p>
+</header>
+
+<div class="container">
+
+<h2 id="about">Tentang Saya</h2>
+<div class="card">
+<p>Saya konten kreator & software engineer pemula yang fokus neon aesthetic. Editing menggunakan Alight Motion dan belajar coding modern.</p>
+</div>
+
+<h2 id="skills">Skills</h2>
+<div class="card">
+<h3>Content Creation</h3>
+<ul>
+<li>Editing video (Alight Motion)</li>
+<li>Motion graphics neon</li>
+<li>Storytelling & branding</li>
+</ul>
+<h3>Software Engineering</h3>
+<ul>
+<li>HTML/CSS/JS dasar</li>
+<li>Python</li>
+<li>UI/UX simple</li>
+<li>Git/GitHub</li>
+</ul>
+<a class="btn" href="#">Download CV</a>
+</div>
+
+<h2 id="projects">Projects</h2>
+<div class="card">
+<h3>Personal Neon Portfolio</h3>
+<p>Website neon glow, cyber grid, glassmorphism, animasi smooth, identitas visual futuristik. Skill HTML/CSS meningkat.</p>
+</div>
+<div class="card">
+<h3>Mini JavaScript Games</h3>
+<p>Koleksi game sederhana: tebak angka, reflex test. Latihan logika & DOM interaktif.</p>
+</div>
+<div class="card">
+<h3>Konten Aesthetic Alight Motion</h3>
+<p>Koleksi video neon aesthetic, motion halus, glow effect. Fokus branding pribadi.</p>
+</div>
+
+<h2 id="tools">My Tools</h2>
+<div class="card">
+<p>Alight Motion</p>
+<p>VS Code</p>
+<p>Python</p>
+<p>GitHub</p>
+</div>
+
+<h2 id="contact">Kontak</h2>
+<div class="card">
+    <p>Email: <a href="mailto:ridhodafaw@gmail.com">ridhodafaw@gmail.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/pawardann">@pawardann</a></p>
+    <p>GitHub: <a href="https://github.com/cikipaw-ai">github.com/cikipaw-ai</a></p>
+    <p>TikTok: <a href="https://www.tiktok.com/@pawlv">@pawlv</a></p>
+</div>
+
+</div>
+
+<script>
+function toggleTheme(){
+    document.body.classList.toggle("light");
+    const btn = document.getElementById("themeToggle");
+    if(document.body.classList.contains("light")){
+        btn.textContent = "Dark";
+    } else {
+        btn.textContent = "Light";
+    }
+}
+</script>
+
+</body>
+</html>
